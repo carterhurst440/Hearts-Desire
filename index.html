@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart's Desire Simulator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Rajdhani:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="table-wrapper">
+      <header class="hud">
+        <div class="branding">
+          <span class="game-tag">Heart's Desire</span>
+          <span class="tagline">Chase the crimson crown</span>
+        </div>
+        <div class="status-block">
+          <div class="stat">
+            <span class="label">Balance</span>
+            <span class="value" id="balance">$500</span>
+          </div>
+          <div class="stat">
+            <span class="label">Current Bet</span>
+            <span class="value" id="current-bet">$25</span>
+          </div>
+          <div class="stat">
+            <span class="label">Hearts Drawn</span>
+            <span class="value" id="hearts-drawn">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Neutral Count</span>
+            <span class="value" id="neutral-count">0 / 4</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="arena">
+        <section class="dealer-space">
+          <div class="label-row">
+            <h2>Dealer's Run</h2>
+            <div class="heart-readout" id="run-count">0 cards</div>
+          </div>
+          <div class="hand" id="dealer-hand"></div>
+        </section>
+
+        <section class="mid-panel">
+          <div class="energy-track">
+            <div class="energy-bar">
+              <div class="fill" id="meter-fill"></div>
+            </div>
+            <span class="goal-text"><span id="heart-meter">0 / 5 hearts</span> • Five hearts crowns the hand</span>
+          </div>
+          <div class="message" id="message">Welcome to Heart's Desire.</div>
+        </section>
+
+        <section class="player-space">
+          <div class="label-row">
+            <h2>Heart Tally</h2>
+            <div class="heart-readout" id="heart-count">0</div>
+          </div>
+          <div class="hand" id="player-hand"></div>
+        </section>
+      </main>
+
+      <footer class="controls">
+        <div class="chip-tray">
+          <button class="chip" data-chip="5">$5</button>
+          <button class="chip" data-chip="10">$10</button>
+          <button class="chip" data-chip="25">$25</button>
+          <button class="chip" data-chip="50">$50</button>
+          <button class="chip" data-chip="100">$100</button>
+          <button class="chip" data-chip="250">$250</button>
+          <button class="chip muted" id="clear-bet">Clear</button>
+        </div>
+        <div class="action-row">
+          <button class="action primary" id="deal">Start Hand</button>
+          <button class="action" id="press" disabled>Press (Deal)</button>
+          <button class="action" id="withdraw" disabled>Withdraw</button>
+          <button class="action" id="reset-game">Reset Bank</button>
+        </div>
+      </footer>
+    </div>
+
+    <aside class="rule-sheet">
+      <h3>How to play</h3>
+      <ul>
+        <li>Place your wager, then start the hand to let the dealer draw cards.</li>
+        <li>Hearts build your payout ladder. After each heart, choose to withdraw or press.</li>
+        <li>Clubs and diamonds are neutral. Four neutrals end the hand with a loss.</li>
+        <li>Any spade immediately loses the bet. The queen of hearts instantly pays 2:1.</li>
+        <li>Capture five hearts to claim the max 100:1 payout.</li>
+      </ul>
+    </aside>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
