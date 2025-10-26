@@ -1,0 +1,16 @@
+{
+  "name": "hearts-desire-simulator",
+  "version": "1.0.0",
+  "description": "Demo server for the Heart's Desire simulator UI",
+  "main": "server.js",
+  "scripts": {
+    "demo": "node server.js"
+  },
+  "keywords": [
+    "heart's desire",
+    "casino",
+    "simulator"
+  ],
+  "author": "",
+  "license": "MIT"
+}
